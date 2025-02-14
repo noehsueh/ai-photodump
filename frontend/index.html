@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Dump AI</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Photo Dump</h1>
+        
+        <!-- Upload Section -->
+        <section id="upload-section" class="section">
+            <div class="dropzone" id="drop-zone">
+                <p>Drag & drop photos here</p>
+                <p class="upload-hint">or</p>
+                <div class="upload-buttons">
+                    <button id="browse-button">Choose Photos</button>
+                </div>
+            </div>
+            <div class="preview-actions">
+                <button id="clear-selection" class="secondary">Clear Selection</button>
+            </div>
+            <div id="preview-grid" class="preview-grid"></div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories-section" class="section">
+            <h2>Photo Dump Ideas</h2>
+            <div class="categories-input">
+                <textarea id="categories-input" rows="10" placeholder="Enter categories, one per line... &#10;Example:&#10;A beach or lake shot&#10;A candid group photo&#10;Local food or drink"></textarea>
+                <button id="start-process" disabled>Start Processing</button>
+            </div>
+        </section>
+
+        <!-- Processing Section -->
+        <section id="processing-section" class="section hidden">
+            <div class="progress">
+                <h3 id="status-text">Processing...</h3>
+                <div class="loader"></div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="section hidden">
+            <h2>Selected Photos</h2>
+            <div class="actions">
+                <button id="download-button">Download Selection</button>
+                <button id="clear-button" class="secondary">Clear All</button>
+            </div>
+            <div id="results-grid" class="results-grid"></div>
+        </section>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="nav-hover-zone left"></div>
+            <div class="modal-nav prev">&larr;</div>
+            <img id="modal-image" src="" alt="Preview">
+            <div class="modal-loader"></div>
+            <div class="nav-hover-zone right"></div>
+            <div class="modal-nav next">&rarr;</div>
+            <div class="modal-shortcuts">Use ← → arrow keys to navigate • ESC to close</div>
+        </div>
+    </div>
+
+    <script type="module" src="static/app.js"></script>
+</body>
+</html>
